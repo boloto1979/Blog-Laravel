@@ -55,8 +55,7 @@ class PostResource extends Resource
                         Grid::make(2)
                             ->schema([
                                 Forms\Components\DateTimePicker::make('published_at')
-                                    ->label(label: 'Data')
-                                    ->required(),
+                                    ->label(label: 'Data'),
                             ]),
                     ])->columnSpan(8),
 
@@ -89,6 +88,9 @@ class PostResource extends Resource
                 Tables\Columns\TextColumn::make('published_at')
                     ->label(label: 'Publicado')
                     ->dateTime(format: 'd/m/y H:i:s'),
+                    Tables\Columns\TextColumn::make('created_at')
+                    ->label(label:'Data de criação')
+                    ->dateTime(format:'d/m/y H:i:s'),
             ])
             ->filters([
                 //
